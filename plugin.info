@@ -1,0 +1,5 @@
+plugin.description: This plugin creates a webseed-only torrent for the user to download. That torrent can be opened on a local torrent client to get files from the ruTorrent server directly.
+plugin.author: zvodd
+plugin.version: 1.0
+rtorrent.remote: error
+plugin.help: https://github.com/Novik/ruTorrent/wiki/Plugins
