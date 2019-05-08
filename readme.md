@@ -17,7 +17,7 @@ Client known to get good speeds are [Aria2](https://aria2.github.io/), Aria2 bas
 
 ### Install
 
-`git clone` into rutorrent plugins directory.
+`git clone https://github.com/zvodd/rutorrent-webseed-download-plugin.git webseed` into rutorrent plugins directory.
 In ruTorrent's `conf.php` file, create the `webseedurl` variable:
 ```
 $webseedurl = "http://example.com/downloads";
