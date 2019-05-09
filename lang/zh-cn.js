@@ -6,7 +6,7 @@
  * Author: 
  */
 
- theUILang.getSource		= "获取 webseed.torrent";
+ theUILang.getWebSeedSource		= "获取 webseed.torrent";
  theUILang.cantFindTorrent	= "这个下载的 torrent 源文件未找到.";
 
-thePlugins.get("source").langLoaded();
+thePlugins.get("webseedsource").langLoaded();

@@ -6,7 +6,7 @@
  * Author: Magnus Holm (holmen@brasse.se) 
  */
 
- theUILang.getSource		= "Hämta webseed torrentfil";
+ theUILang.getWebSeedSource		= "Hämta webseed torrentfil";
  theUILang.cantFindTorrent	= "Torrentfilen för denna nedladdning kunde inte hittas.";
 
-thePlugins.get("source").langLoaded();
+thePlugins.get("webseedsource").langLoaded();

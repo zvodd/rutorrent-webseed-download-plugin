@@ -6,7 +6,7 @@
  * Author: Limerainne (limerainne@gmail.com)
  */
 
- theUILang.getSource		= "webseed.torrent 얻기";
+ theUILang.getWebSeedSource		= "webseed.torrent 얻기";
  theUILang.cantFindTorrent	= "이 다운로드 항목에 해당하는 원본 토렌트 파일을 찾지 못했습니다.";
 
-thePlugins.get("source").langLoaded();
+thePlugins.get("webseedsource").langLoaded();

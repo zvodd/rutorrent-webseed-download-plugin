@@ -6,7 +6,7 @@
  * Author: Dario Rugani (kontakt@rugani.de)
  */
 
- theUILang.getSource		= "Hole webseed.torrent";
+ theUILang.getWebSeedSource		= "Hole webseed.torrent";
  theUILang.cantFindTorrent	= "Quell Torrent-Datei für diesen Download nicht gefunden.";
 
-thePlugins.get("source").langLoaded();
+thePlugins.get("webseedsource").langLoaded();
