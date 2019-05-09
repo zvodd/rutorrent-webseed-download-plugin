@@ -10,15 +10,15 @@ eval( getPluginConf( 'webseedsource' ) );
 class WeebSeedTorrent extends Torrent {
 		protected $pointer = 0;
 	
-		public function __construct($torrent, $label, $webseedurl, $uselabel) 
+		public function __construct($torrent, $dlpath, $webseedurl) 
 		{
 			$torrentdata = get_object_vars($torrent);
 			foreach ($torrentdata as $key => $value){
 				$this->{$key} = $value;
 			}
 			$url = $webseedurl;
-			if ($label != "" && $uselabel) {
-				$url = $url . "/" . $label . "/";
+			if ($dlpath != "") {
+				$url = $url . "/" . $dlpath . "/";
 			}
 			$this->{"url-list"} = [$url];
 			$this->{"announce-list"} = [];
@@ -38,7 +38,7 @@ class WeebSeedTorrent extends Torrent {
 }
 
 
-function serve_file($webseedurl, $uselabel){
+function serve_file($webseedurl, $webseedbase){
 	if(isset($_REQUEST['result']))
 		cachedEcho('noty(theUILang.cantFindTorrent,"error");',"text/html");
 	if(isset($_REQUEST['hash']))
@@ -46,10 +46,16 @@ function serve_file($webseedurl, $uselabel){
 		$torrent = rTorrent::getSource($_REQUEST['hash']);
 		if($torrent){
 			$req = new rXMLRPCRequest();
-			$req->addCommand(new rXMLRPCCommand( "d.get_custom1", $_REQUEST['hash']));
+			$req->addCommand(new rXMLRPCCommand( "d.get_directory", $_REQUEST['hash']));
 			$req->run();
-			$label = $req->val[0];
-			$newtorrent = new WeebSeedTorrent($torrent, $label, $webseedurl, $uselabel);
+			$basepath = $req->val[0];
+			$req = new rXMLRPCRequest();
+			$req->addCommand(new rXMLRPCCommand( "d.get_base_filename", $_REQUEST['hash']));
+			$req->run();
+			$filename = $req->val[0];
+			$basepath = str_replace($webseedbase, "", $basepath);
+			$basepath = trim(str_replace($filename, "", $basepath), "/");
+			$newtorrent = new WeebSeedTorrent($torrent, $basepath, $webseedurl);
 			toLog("Generating torrent with url_list:" . implode(",", $newtorrent->{"url-list"}));
 			
 			if (is_null($filename)){
@@ -64,6 +70,6 @@ function serve_file($webseedurl, $uselabel){
 	}
 }
 
-serve_file($webseedurl, $webseeduselabel);
+serve_file($webseedurl, $webseedbase);
 header("HTTP/1.0 302 Moved Temporarily");
 header("Location: ".$_SERVER['PHP_SELF'].'?result=0');

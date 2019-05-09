@@ -6,7 +6,8 @@
 //$webseedurl = "http://user:password@myseedbox.com/downloads";
 $webseedurl = "http://example.com/downloads";
 
-//Set to true if your torrents are downloaded in a subdirectory with their
-//label (Such as with autotools), false otherwise
-$webseeduselabel = false;
+//Set this to the local directory the above URL points to
+//Examples:
+//$webseedbase = "/home/user/rtorrent_downloads";
+$webseedbase = "/downloads/current";
 ?>
