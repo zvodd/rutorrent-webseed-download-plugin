@@ -6,7 +6,7 @@
  * Author: 
  */
 
- theUILang.getSource		= "Obtener webseed.torrent";
+ theUILang.getWebSeedSource		= "Obtener webseed.torrent";
  theUILang.cantFindTorrent	= "Archivo torrent original no encontrado.";
 
-thePlugins.get("source").langLoaded();
+thePlugins.get("webseedsource").langLoaded();

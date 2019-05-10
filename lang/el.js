@@ -6,7 +6,7 @@
  * Author: Chris Kanatas (ckanatas@gmail.com)
  */
 
- theUILang.getSource		= "Λήψη αρχείου webseed.torrent";
+ theUILang.getWebSeedSource		= "Λήψη αρχείου webseed.torrent";
  theUILang.cantFindTorrent	= "Το πηγαίο αρχείο torrent για αυτή τη λήψη δεν βρέθηκε.";
 
-thePlugins.get("source").langLoaded();
+thePlugins.get("webseedsource").langLoaded();

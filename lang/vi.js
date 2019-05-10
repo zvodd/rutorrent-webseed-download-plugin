@@ -6,7 +6,7 @@
  * Author: Ta Xuan Truong (truongtx8 AT gmail DOT com)
  */
 
- theUILang.getSource		= "Lấy tập tin webseed.torrent";
+ theUILang.getWebSeedSource		= "Lấy tập tin webseed.torrent";
  theUILang.cantFindTorrent	= "Không tìm thấy tập tin torrent gốc đang tải.";
 
-thePlugins.get("source").langLoaded();
+thePlugins.get("webseedsource").langLoaded();
