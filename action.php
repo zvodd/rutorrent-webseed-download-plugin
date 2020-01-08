@@ -60,7 +60,9 @@ function serve_file($webseedurl, $webseedbase){
 			
 			if (is_null($filename)){
 				$filename = 'webseed_'.$newtorrent->getName($_REQUEST['hash']).'.torrent';
-			}
+			}else{
+                $filename = 'webseed_'.$filename
+            }
 			if(isset($_SERVER['HTTP_USER_AGENT']) && strstr($_SERVER['HTTP_USER_AGENT'],'MSIE')){
 				$filename = rawurlencode($filename);
 			}
