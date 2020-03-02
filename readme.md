@@ -19,7 +19,7 @@ Webseed torrents can experience poor speeds in libtorrent based clients.
 Clients known to get good speeds are Deluge 2, [Aria2](https://aria2.github.io/), [uGet](http://ugetdm.com) with Aira2 backend, and also Free Download Manager for Windows.
 
 **Configuration requires ruTorrent's downloads folder to be served over http.**  e.g. accessable by URL like `http://seedbox.example.com/downloads`
-However, the URL path does not need to be indexable (list folder contents).
+However, the URL path does not need to be indexable (list folder contents). See [zvodd/webseeder](https://github.com/zvodd/webseeder) project for a stand alone http(s) server that can fulfill this requirement (necessitates custom ports.)
 
 ### Install
 
